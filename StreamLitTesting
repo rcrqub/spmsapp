@@ -1,0 +1,9 @@
+import streamlit as st
+import pandas as pd
+
+st.title("Sanitary Product Management System")
+
+df = pd.read_csv('BathroomData.csv')
+st.write("Data Preview:")
+st.write(df)
+st.bar_chart(df)
