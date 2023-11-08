@@ -1,0 +1,7 @@
+bathroom_id,item_type,stock_level
+1,heavy_pad,15
+1,light_pad,10
+1,medium_pad,3
+3,heavy_pad,5
+3,medium_pad,6
+3,light_pad,2
