@@ -18,4 +18,6 @@ st.subheader('Stock Low Alerts')
 stock_warning_thres = st.number_input("Please set the Stock Warning Threshold: ", step = 1, placeholder="Type a number...")
 for _, row in df.iterrows():
     if row['stock_level'] <= stock_warning_thres:
-        st.write(f" ❗ {row['item_type']} is low in Bathroom {row['bathroom_id']}")
+        str = row['item_type'].replace("_"," ")
+        str = str.capitalize()
+        st.markdown(f" :warning: {str} is low in Bathroom {row['bathroom_id']}")
