@@ -6,7 +6,7 @@ st.title("Bathroom and Product Management")
 
 df = pd.read_csv('BathroomData.csv')
 
-md = 'Here you can create new bathroom, or remove old ones. Additioanly, you can add and manage the products you have available.'
+md = 'Here you can create new bathroom, or remove old ones. Additionaly, you can add and manage the products you have available.'
 st.markdown(md)
 
 IDS = df['bathroom_id'].unique()
