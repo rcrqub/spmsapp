@@ -7,7 +7,7 @@ sim = Simulation()
 dayData = sim.simulateDay()
 
 
-with open('test.csv', 'w') as file:
+with open('ReportingData.csv', 'w') as file:
     write = DictWriter(file, fieldnames=fieldNames)
     write.writeheader()
     for day in dayData:
