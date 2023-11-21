@@ -28,3 +28,11 @@ class Simulation:
                 self.df.loc[index, 'stock_level'] = remainingStock
                 report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%M"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
         return report
+    
+    def simulateDay(self):
+        action = []
+        while self.startDate <= self.endDate:
+            action.append(self.randomise())
+            if self.startDate.hour == self.closingHour: self.startDate += self.hoursTilOpen*self.delta # If time is 10pm move to 8am
+            else: self.startDate += self.delta # Add 1 hour to the time
+        return action
