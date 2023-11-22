@@ -5,9 +5,8 @@
 The Sanitary Product Management System (SPMS) is a digital solution developed as part of the CSC4008 module, focusing on Digital Transformation. This system aims to streamline and enhance the management of sanitary products focusing on Feminie Hygine Products.
 ## Features
 
-- **Product Catalog:** View and manage a comprehensive catalog of sanitary products.
   
-- **Inventory Management:** Keep track of product stock levels, restocking alerts, and order management.
+- **Inventory Management:** Keep track of product stock levels and restocking alerts.
 
 - **User Authentication:** Secure access with user authentication to ensure data integrity and privacy.
 
@@ -15,11 +14,11 @@ The Sanitary Product Management System (SPMS) is a digital solution developed as
 
 ## Technologies Used
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express
-- Database: MongoDB
-- Authentication: Passport.js
-- Testing: Jest
+- Frontend: Streamlit (Python Libary)
+- Backend: Python
+- Database: No Database implemented. Used CSV files
+- Authentication: 
+- Testing: Streamlit / PyTest
 
 ## Acknowledgments
 
