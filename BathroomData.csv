@@ -4,3 +4,4 @@ bathroom_id,bathroom_description,item_type,stock_level
 2,First Floor U,heavy_pad,2.0
 2,First Floor U,medium_pad,4.0
 2,First Floor U,light_pad,13.0
+3,Second Floor F,,

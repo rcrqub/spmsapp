@@ -50,20 +50,20 @@ DESC = df['bathroom_description'].unique()
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("**Bathroom ID**")
+    st.markdown("*Bathroom ID*")
     for bathroom_id in IDS:
         st.write(f"{bathroom_id}")
     if st.button('🟢 Add Bathroom'):
         st.session_state.show = True
 
 with col2:
-    st.markdown("**Description**")
+    st.markdown("*Description*")
     for description in DESC:
         st.write(f"{description}")
 
 with col3:
-    st.markdown("**Remove Bathroom**")
+    st.markdown("*Remove Bathroom*")
     for bathroom_id in IDS:
-        if st.button(f'🔴 Remove', key=bathroom_id):
+        if st.button(f'❌ Remove', key=bathroom_id):
             remove_bathroom(bathroom_id)
             st.experimental_rerun()
