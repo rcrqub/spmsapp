@@ -27,7 +27,7 @@ selected_df = df.loc[df['item_type'] == selected_product]
 # Bathroom selection for redistribution
 selected_bathrooms = st.multiselect(
     'Select the bathrooms for redistribution:', 
-    selected_df['bathroom_id'].unique(),
+    selected_df['bathroom_description'].unique(),
     help="Choose the bathrooms you want to redistribute to."
 )
 
@@ -35,13 +35,13 @@ selected_bathrooms = st.multiselect(
 mean_stock_level = selected_df['stock_level'].mean()
 
 # Display redistribution information for selected bathrooms
-for _, row in selected_df[selected_df['bathroom_id'].isin(selected_bathrooms)].iterrows():
+for _, row in selected_df[selected_df['bathroom_description'].isin(selected_bathrooms)].iterrows():
     stock_difference = int(mean_stock_level) - row['stock_level']
-    bathroom_id = row['bathroom_id']
+    b = row['bathroom_description']
 
     if stock_difference < 0:
-        st.warning(f"Remove {abs(stock_difference)} items from Bathroom {bathroom_id}")
+        st.warning(f"Remove {abs(stock_difference)} items from Bathroom {b}")
     elif stock_difference > 0:
-        st.success(f"Add {stock_difference} items to Bathroom {bathroom_id}")
+        st.success(f"Add {stock_difference} items to Bathroom {b}")
     else:
-        st.info(f"Bathroom {bathroom_id} has the optimal stock level")
+        st.info(f"Bathroom {b} has the optimal stock level")
