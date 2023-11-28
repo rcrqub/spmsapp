@@ -1,136 +1,136 @@
-year,month,day,hour,bathroom_id,item_type,stock_level
-2024,01,01,08,1,heavy_pad,15
-2024,01,01,08,1,medium_pad,3
-2024,01,01,08,1,light_pad,10
-2024,01,01,08,2,heavy_pad,1
-2024,01,01,08,2,medium_pad,4
-2024,01,01,08,2,light_pad,13
-2024,01,01,08,3,heavy_pad,5
-2024,01,01,08,3,medium_pad,4
-2024,01,01,08,3,light_pad,2
-2024,01,01,09,1,heavy_pad,15
-2024,01,01,09,1,medium_pad,2
-2024,01,01,09,1,light_pad,10
-2024,01,01,09,2,heavy_pad,1
-2024,01,01,09,2,medium_pad,4
-2024,01,01,09,2,light_pad,13
-2024,01,01,09,3,heavy_pad,5
-2024,01,01,09,3,medium_pad,4
-2024,01,01,09,3,light_pad,2
-2024,01,01,10,1,heavy_pad,15
-2024,01,01,10,1,medium_pad,2
-2024,01,01,10,1,light_pad,10
-2024,01,01,10,2,heavy_pad,1
-2024,01,01,10,2,medium_pad,4
-2024,01,01,10,2,light_pad,13
-2024,01,01,10,3,heavy_pad,5
-2024,01,01,10,3,medium_pad,4
-2024,01,01,10,3,light_pad,2
-2024,01,01,11,1,heavy_pad,11
-2024,01,01,11,1,medium_pad,2
-2024,01,01,11,1,light_pad,10
-2024,01,01,11,2,heavy_pad,1
-2024,01,01,11,2,medium_pad,0
-2024,01,01,11,2,light_pad,13
-2024,01,01,11,3,heavy_pad,5
-2024,01,01,11,3,medium_pad,0
-2024,01,01,11,3,light_pad,2
-2024,01,01,12,1,heavy_pad,10
-2024,01,01,12,1,medium_pad,0
-2024,01,01,12,1,light_pad,10
-2024,01,01,12,2,heavy_pad,1
-2024,01,01,12,2,medium_pad,0
-2024,01,01,12,2,light_pad,13
-2024,01,01,12,3,heavy_pad,5
-2024,01,01,12,3,medium_pad,0
-2024,01,01,12,3,light_pad,2
-2024,01,01,13,1,heavy_pad,10
-2024,01,01,13,1,medium_pad,0
-2024,01,01,13,1,light_pad,6
-2024,01,01,13,2,heavy_pad,1
-2024,01,01,13,2,medium_pad,0
-2024,01,01,13,2,light_pad,13
-2024,01,01,13,3,heavy_pad,5
-2024,01,01,13,3,medium_pad,0
-2024,01,01,13,3,light_pad,2
-2024,01,01,14,1,heavy_pad,10
-2024,01,01,14,1,medium_pad,0
-2024,01,01,14,1,light_pad,6
-2024,01,01,14,2,heavy_pad,1
-2024,01,01,14,2,medium_pad,0
-2024,01,01,14,2,light_pad,13
-2024,01,01,14,3,heavy_pad,4
-2024,01,01,14,3,medium_pad,0
-2024,01,01,14,3,light_pad,2
-2024,01,01,15,1,heavy_pad,10
-2024,01,01,15,1,medium_pad,0
-2024,01,01,15,1,light_pad,6
-2024,01,01,15,2,heavy_pad,1
-2024,01,01,15,2,medium_pad,0
-2024,01,01,15,2,light_pad,13
-2024,01,01,15,3,heavy_pad,4
-2024,01,01,15,3,medium_pad,0
-2024,01,01,15,3,light_pad,2
-2024,01,01,16,1,heavy_pad,9
-2024,01,01,16,1,medium_pad,0
-2024,01,01,16,1,light_pad,6
-2024,01,01,16,2,heavy_pad,1
-2024,01,01,16,2,medium_pad,0
-2024,01,01,16,2,light_pad,10
-2024,01,01,16,3,heavy_pad,1
-2024,01,01,16,3,medium_pad,0
-2024,01,01,16,3,light_pad,2
-2024,01,01,17,1,heavy_pad,8
-2024,01,01,17,1,medium_pad,0
-2024,01,01,17,1,light_pad,2
-2024,01,01,17,2,heavy_pad,1
-2024,01,01,17,2,medium_pad,0
-2024,01,01,17,2,light_pad,10
-2024,01,01,17,3,heavy_pad,1
-2024,01,01,17,3,medium_pad,0
-2024,01,01,17,3,light_pad,2
-2024,01,01,18,1,heavy_pad,8
-2024,01,01,18,1,medium_pad,0
-2024,01,01,18,1,light_pad,1
-2024,01,01,18,2,heavy_pad,1
-2024,01,01,18,2,medium_pad,0
-2024,01,01,18,2,light_pad,10
-2024,01,01,18,3,heavy_pad,1
-2024,01,01,18,3,medium_pad,0
-2024,01,01,18,3,light_pad,2
-2024,01,01,19,1,heavy_pad,8
-2024,01,01,19,1,medium_pad,0
-2024,01,01,19,1,light_pad,1
-2024,01,01,19,2,heavy_pad,1
-2024,01,01,19,2,medium_pad,0
-2024,01,01,19,2,light_pad,10
-2024,01,01,19,3,heavy_pad,1
-2024,01,01,19,3,medium_pad,0
-2024,01,01,19,3,light_pad,2
-2024,01,01,20,1,heavy_pad,8
-2024,01,01,20,1,medium_pad,0
-2024,01,01,20,1,light_pad,1
-2024,01,01,20,2,heavy_pad,1
-2024,01,01,20,2,medium_pad,0
-2024,01,01,20,2,light_pad,10
-2024,01,01,20,3,heavy_pad,0
-2024,01,01,20,3,medium_pad,0
-2024,01,01,20,3,light_pad,2
-2024,01,01,21,1,heavy_pad,8
-2024,01,01,21,1,medium_pad,0
-2024,01,01,21,1,light_pad,1
-2024,01,01,21,2,heavy_pad,1
-2024,01,01,21,2,medium_pad,0
-2024,01,01,21,2,light_pad,10
-2024,01,01,21,3,heavy_pad,0
-2024,01,01,21,3,medium_pad,0
-2024,01,01,21,3,light_pad,2
-2024,01,01,22,1,heavy_pad,8
-2024,01,01,22,1,medium_pad,0
-2024,01,01,22,1,light_pad,1
-2024,01,01,22,2,heavy_pad,1
-2024,01,01,22,2,medium_pad,0
-2024,01,01,22,2,light_pad,6
-2024,01,01,22,3,heavy_pad,0
-2024,01,01,22,3,medium_pad,0
-2024,01,01,22,3,light_pad,2
+year,month,day,hour,bathroom_id,item_type,stock_level,bathroom_description
+2024,01,01,08,1,heavy_pad,15,First Floor F
+2024,01,01,08,1,medium_pad,3,First Floor F
+2024,01,01,08,1,light_pad,10,First Floor F
+2024,01,01,08,2,heavy_pad,1,Second Floor F
+2024,01,01,08,2,medium_pad,4, Second Floor F
+2024,01,01,08,2,light_pad,13, Second Floor F
+2024,01,01,08,3,heavy_pad,5, Third Floor F
+2024,01,01,08,3,medium_pad,4, Third Floor F
+2024,01,01,08,3,light_pad,2, Third Floor F
+2024,01,01,09,1,heavy_pad,15, First Floor F
+2024,01,01,09,1,medium_pad,2, First Floor F
+2024,01,01,09,1,light_pad,10, First Floor F
+2024,01,01,09,2,heavy_pad,1, Second Floor F
+2024,01,01,09,2,medium_pad,4, Second Floor F
+2024,01,01,09,2,light_pad,13, Second Floor F
+2024,01,01,09,3,heavy_pad,5, Third Floor F
+2024,01,01,09,3,medium_pad,4, Third Floor F
+2024,01,01,09,3,light_pad,2, Third Floor F
+2024,01,01,10,1,heavy_pad,15, First Floor F
+2024,01,01,10,1,medium_pad,2, First Floor F
+2024,01,01,10,1,light_pad,10, First Floor F
+2024,01,01,10,2,heavy_pad,1, Second Floor F
+2024,01,01,10,2,medium_pad,4, Second Floor F
+2024,01,01,10,2,light_pad,13, Second Floor F
+2024,01,01,10,3,heavy_pad,5, Third Floor F
+2024,01,01,10,3,medium_pad,4, Third Floor F
+2024,01,01,10,3,light_pad,2, Third Floor F
+2024,01,01,11,1,heavy_pad,11, First Floor F
+2024,01,01,11,1,medium_pad,2, First Floor F
+2024,01,01,11,1,light_pad,10, First Floor F
+2024,01,01,11,2,heavy_pad,1, Second Floor F
+2024,01,01,11,2,medium_pad,0, Second Floor F
+2024,01,01,11,2,light_pad,13, Second Floor F
+2024,01,01,11,3,heavy_pad,5, Third Floor F
+2024,01,01,11,3,medium_pad,0, Third Floor F
+2024,01,01,11,3,light_pad,2, Third Floor F
+2024,01,01,12,1,heavy_pad,10, First Floor F
+2024,01,01,12,1,medium_pad,0, First Floor F
+2024,01,01,12,1,light_pad,10, First Floor F
+2024,01,01,12,2,heavy_pad,1, Second Floor F
+2024,01,01,12,2,medium_pad,0, Second Floor F
+2024,01,01,12,2,light_pad,13, Second Floor F
+2024,01,01,12,3,heavy_pad,5, Third Floor F
+2024,01,01,12,3,medium_pad,0, Third Floor F
+2024,01,01,12,3,light_pad,2, Third Floor F
+2024,01,01,13,1,heavy_pad,10, First Floor F
+2024,01,01,13,1,medium_pad,0, First Floor F
+2024,01,01,13,1,light_pad,6, First Floor F
+2024,01,01,13,2,heavy_pad,1, Second Floor F
+2024,01,01,13,2,medium_pad,0, Second Floor F
+2024,01,01,13,2,light_pad,13, Second Floor F
+2024,01,01,13,3,heavy_pad,5, Third Floor F
+2024,01,01,13,3,medium_pad,0, Third Floor F
+2024,01,01,13,3,light_pad,2, Third Floor F
+2024,01,01,14,1,heavy_pad,10, First Floor F
+2024,01,01,14,1,medium_pad,0, First Floor F
+2024,01,01,14,1,light_pad,6, First Floor F
+2024,01,01,14,2,heavy_pad,1, Second Floor F
+2024,01,01,14,2,medium_pad,0, Second Floor F
+2024,01,01,14,2,light_pad,13, Second Floor F
+2024,01,01,14,3,heavy_pad,4 , Third Floor F
+2024,01,01,14,3,medium_pad,0, Third Floor F
+2024,01,01,14,3,light_pad,2, Third Floor F
+2024,01,01,15,1,heavy_pad,10, First Floor F
+2024,01,01,15,1,medium_pad,0, First Floor F
+2024,01,01,15,1,light_pad,6, First Floor F
+2024,01,01,15,2,heavy_pad,1, Second Floor F
+2024,01,01,15,2,medium_pad,0, Second Floor F
+2024,01,01,15,2,light_pad,13, Second Floor F
+2024,01,01,15,3,heavy_pad,4, Third Floor F
+2024,01,01,15,3,medium_pad,0, Third Floor F
+2024,01,01,15,3,light_pad,2, Third Floor F
+2024,01,01,16,1,heavy_pad,9, First Floor F
+2024,01,01,16,1,medium_pad,0, First Floor F
+2024,01,01,16,1,light_pad,6, First Floor F
+2024,01,01,16,2,heavy_pad,1, Second Floor F
+2024,01,01,16,2,medium_pad,0, Second Floor F
+2024,01,01,16,2,light_pad,10, Second Floor F
+2024,01,01,16,3,heavy_pad,1, Third Floor F
+2024,01,01,16,3,medium_pad,0, Third Floor F
+2024,01,01,16,3,light_pad,2, Third Floor F
+2024,01,01,17,1,heavy_pad,8, First Floor F
+2024,01,01,17,1,medium_pad,0, First Floor F
+2024,01,01,17,1,light_pad,2, First Floor F
+2024,01,01,17,2,heavy_pad,1, Second Floor F
+2024,01,01,17,2,medium_pad,0, Second Floor F
+2024,01,01,17,2,light_pad,10, Second Floor F
+2024,01,01,17,3,heavy_pad,1, Third Floor F
+2024,01,01,17,3,medium_pad,0, Third Floor F
+2024,01,01,17,3,light_pad,2, Third Floor F
+2024,01,01,18,1,heavy_pad,8, First Floor F
+2024,01,01,18,1,medium_pad,0, First Floor F
+2024,01,01,18,1,light_pad,1, First Floor F
+2024,01,01,18,2,heavy_pad,1, Second Floor F
+2024,01,01,18,2,medium_pad,0, Second Floor F
+2024,01,01,18,2,light_pad,10, Second Floor F
+2024,01,01,18,3,heavy_pad,1, Third Floor F
+2024,01,01,18,3,medium_pad,0, Third Floor F
+2024,01,01,18,3,light_pad,2, Third Floor F
+2024,01,01,19,1,heavy_pad,8, First Floor F
+2024,01,01,19,1,medium_pad,0, First Floor F
+2024,01,01,19,1,light_pad,1, First Floor F
+2024,01,01,19,2,heavy_pad,1, Second Floor F
+2024,01,01,19,2,medium_pad,0, Second Floor F
+2024,01,01,19,2,light_pad,10, Second Floor F
+2024,01,01,19,3,heavy_pad,1, Third Floor F
+2024,01,01,19,3,medium_pad,0, Third Floor F
+2024,01,01,19,3,light_pad,2, Third Floor F
+2024,01,01,20,1,heavy_pad,8, First Floor F
+2024,01,01,20,1,medium_pad,0, First Floor F
+2024,01,01,20,1,light_pad,1, First Floor F
+2024,01,01,20,2,heavy_pad,1, Second Floor F
+2024,01,01,20,2,medium_pad,0, Second Floor F
+2024,01,01,20,2,light_pad,10, Second Floor F
+2024,01,01,20,3,heavy_pad,0, Third Floor F
+2024,01,01,20,3,medium_pad,0, Third Floor F
+2024,01,01,20,3,light_pad,2, Third Floor F
+2024,01,01,21,1,heavy_pad,8, First Floor F
+2024,01,01,21,1,medium_pad,0, First Floor F
+2024,01,01,21,1,light_pad,1, First Floor F
+2024,01,01,21,2,heavy_pad,1, Second Floor F
+2024,01,01,21,2,medium_pad,0, Second Floor F
+2024,01,01,21,2,light_pad,10, Second Floor F
+2024,01,01,21,3,heavy_pad,0, Third Floor F
+2024,01,01,21,3,medium_pad,0, Third Floor F
+2024,01,01,21,3,light_pad,2, Third Floor F
+2024,01,01,22,1,heavy_pad,8, First Floor F
+2024,01,01,22,1,medium_pad,0, First Floor F
+2024,01,01,22,1,light_pad,1, First Floor F
+2024,01,01,22,2,heavy_pad,1, Second Floor F
+2024,01,01,22,2,medium_pad,0, Second Floor F
+2024,01,01,22,2,light_pad,6, Second Floor F
+2024,01,01,22,3,heavy_pad,0, Third Floor F
+2024,01,01,22,3,medium_pad,0, Third Floor F
+2024,01,01,22,3,light_pad,2, Third Floor F

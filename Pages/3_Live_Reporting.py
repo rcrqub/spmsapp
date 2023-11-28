@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 
 st.set_page_config(page_title="SPMS",page_icon=':toilet:')
-st.title("Report")
+st.title("Live Reporting")
 
 # Read the CSV data
 df = pd.read_csv('ReportingData.csv')
@@ -14,9 +14,6 @@ df['stock_level'] = df['stock_level'].astype(int)
 
 # Create a new column combining bathroom_id and item_type
 df['group'] = df['bathroom_id'].astype(str) + ' ' + df['item_type']
-
-# Streamlit app
-st.title('Multiline Chart Example')
 
 view_option = st.radio("Select View", ["Bathroom ID - Item Type", "Item Type Only", "Total Quantity by Item Type"])
 

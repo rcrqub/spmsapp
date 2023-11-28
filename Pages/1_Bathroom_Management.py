@@ -5,26 +5,28 @@ from streamlit_float import float_dialog
 st.set_page_config(page_title="SPMS", page_icon=':toilet:')
 st.title("Bathroom Management")
 
-# Read data or create an empty DataFrame if the file doesn't exist
-try:
-    df = pd.read_csv('BathroomData.csv')
-except FileNotFoundError:
-    df = pd.DataFrame(columns=['bathroom_id', 'bathroom_description', 'item_type'])
+df = pd.read_csv('ReportingData.csv')
+pd.to_datetime(df[['year','month','day','hour']])
+current_date = df[['year','month','day','hour']].max()
+current_data = df.loc[(df['year'] == current_date['year'])
+                     & (df['month'] == current_date['month'])
+                     & (df['day'] == current_date['day'])
+                     & (df['hour'] == current_date['hour'])]
 
 md = 'Here you can create new bathrooms or remove old ones. Additionally, you can manually manage the products you have available.'
 st.markdown(md)
 
-IDS = df['bathroom_id'].unique()
-DESC = df['bathroom_description'].unique()
+IDS = current_data['bathroom_id'].unique()
+DESC = current_data['bathroom_description'].unique()
 
 def add_bathroom(text):
     new_bathroom = {'bathroom_id': len(IDS) + 1, 'bathroom_description': text}
-    df.loc[len(df)] = new_bathroom
-    df.to_csv('BathroomData.csv', index=False)
+    current_data.loc[len(current_data)] = new_bathroom
+    current_data.to_csv('BathroomData.csv', index=False)
 
 def remove_bathroom(bathroom_id):
-    df.drop(df[df.bathroom_id == bathroom_id].index, inplace=True)
-    df.to_csv('BathroomData.csv', index=False)
+    current_data.drop(current_data[current_data.bathroom_id == bathroom_id].index, inplace=True)
+    current_data.to_csv('BathroomData.csv', index=False)
 
 st.subheader('Available Bathrooms :toilet:')
 
@@ -44,8 +46,8 @@ with dialog_container:
             st.experimental_rerun()
 
 # Refresh IDS and DESC after adding a new bathroom
-IDS = df['bathroom_id'].unique()
-DESC = df['bathroom_description'].unique()
+IDS = current_data['bathroom_id'].unique()
+DESC = current_data['bathroom_description'].unique()
 
 col1, col2, col3 = st.columns(3)
 

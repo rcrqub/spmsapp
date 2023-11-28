@@ -6,7 +6,13 @@ st.set_page_config(page_title="SPMS", page_icon="🚽")
 st.title("Inventory Redistribution")
 
 # Read data
-df = pd.read_csv('BathroomData.csv')
+df = pd.read_csv('ReportingData.csv')
+pd.to_datetime(df[['year','month','day','hour']])
+current_date = df[['year','month','day','hour']].max()
+current_data = df.loc[(df['year'] == current_date['year'])
+        & (df['month'] == current_date['month'])
+        & (df['day'] == current_date['day'])
+        & (df['hour'] == current_date['hour'])]
 
 # Product selection dropdown
 selected_product = st.selectbox(
@@ -22,7 +28,7 @@ st.write('You selected:', selected_product)
 selected_product = selected_product.replace(" ", "_").lower()
 
 # Filter DataFrame based on selected product
-selected_df = df.loc[df['item_type'] == selected_product]
+selected_df = current_data.loc[current_data['item_type'] == selected_product]
 
 # Bathroom selection for redistribution
 selected_bathrooms = st.multiselect(
