@@ -69,3 +69,4 @@ with col3:
         if st.button(f'❌ Remove', key=bathroom_id):
             remove_bathroom(bathroom_id)
             st.experimental_rerun()
+
