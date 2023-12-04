@@ -1,7 +1,7 @@
-bathroom_id,bathroom_description,item_type,stock_level
-1,First Floor F,heavy_pad,10.0
-1,First Floor F,medium_pad,23.0
-2,First Floor U,heavy_pad,2.0
-2,First Floor U,medium_pad,4.0
-2,First Floor U,light_pad,13.0
-3,Second Floor F,,
+year,month,day,hour,bathroom_id,item_type,stock_level,bathroom_description
+2024,1,1,22,1,heavy_pad,8, First Floor F
+2024,1,1,22,1,medium_pad,0, First Floor F
+2024,1,1,22,1,light_pad,1, First Floor F
+2024,1,1,22,2,heavy_pad,1, Second Floor F
+2024,1,1,22,2,medium_pad,0, Second Floor F
+2024,1,1,22,2,light_pad,6, Second Floor F

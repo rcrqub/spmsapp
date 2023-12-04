@@ -31,7 +31,7 @@ class Simulation:
                     self.df.loc[index, 'stock_level'] = remainingStock
                 report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%m"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
             else: 
-                self.df.loc[index, 'stock_level'] = 20
+                self.df.loc[index, 'stock_level'] = self.df.loc[index, 'stock_level'] + random.randint(10,15)
                 report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%m"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
         return report
     
