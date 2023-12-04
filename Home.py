@@ -70,7 +70,7 @@ elif authentication_status:
 
 
     # Product Usage Section
-    st.header('Product Usage')
+    st.subheader('Product Usage')
 
     # Convert columns to appropriate types
     df['datetime'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']].astype(str).agg('-'.join, axis=1), format='%Y-%m-%d-%H')
