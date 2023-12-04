@@ -6,6 +6,7 @@ def redistribute_items(df):
 
     # Group by bathroom_id and item_type, and calculate the total stock_level for each group
     grouped_df = df.groupby(['bathroom_id', 'item_type'])['stock_level'].sum().reset_index()
+    
 
     # Calculate the average stock_level for each item_type
     avg_stock_per_item = grouped_df.groupby('item_type')['stock_level'].mean()
@@ -13,7 +14,7 @@ def redistribute_items(df):
     # Function to redistribute stock evenly across bathrooms for a given item_type
     def redistribute_item_type(group):
         item_type = group['item_type'].iloc[0]
-        group['stock_level'] = np.round(avg_stock_per_item[item_type])
+        group['stock_level'] = np.floor(avg_stock_per_item[item_type])
         return group
 
     # Apply the redistribution function to each group (item_type)
@@ -27,21 +28,6 @@ def redistribute_items(df):
 
     # Convert stock_level column to integers
     redistributed_df['stock_level'] = redistributed_df['stock_level'].astype(int)
-
-    # Calculate the difference between original and redistributed stock levels
-    redistributed_df['Difference'] = redistributed_df.apply(
-        lambda row: "{}{}".format(
-            '+' if row['stock_level'] - df.loc[
-                (df['bathroom_id'] == row['bathroom_id']) & (df['item_type'] == row['item_type']),
-                'stock_level'
-            ].iloc[0] > 0 else '',
-            row['stock_level'] - df.loc[
-                (df['bathroom_id'] == row['bathroom_id']) & (df['item_type'] == row['item_type']),
-                'stock_level'
-            ].iloc[0]
-        ),
-        axis=1
-    )
 
     return redistributed_df
 
@@ -59,7 +45,7 @@ def redistribution_summary(original_df, redistributed_df):
         ].iloc[0]
 
         difference = redistributed_stock - original_stock
-        difference_str = f"&#43;{difference}" if difference > 0 else str(difference) #&#43;='+' in ASCII
+        difference_str = f"&#43;{int(difference)}" if difference > 0 else str(int(difference)) #&#43;='+' in ASCII
 
         summary.append({
             'Bathroom ID': bathroom_id,
@@ -75,6 +61,24 @@ def redistribution_summary(original_df, redistributed_df):
     summary_df = summary_df.sort_values(by=['Item Type', 'Bathroom ID'])
     display_markdown_table(summary_df, "Redistribution Summary")
 
+    # Group by bathroom_id and item_type, and calculate the total stock_level for each group
+    original_spare_df = original_df.groupby(['bathroom_id', 'item_type'])['stock_level'].sum().reset_index()
+    redistributed_spare_df = redistributed_df.groupby(['bathroom_id', 'item_type'])['stock_level'].sum().reset_index()
+
+    # Calculate the average stock_level for each item_type
+    total_original_item = original_spare_df.groupby('item_type')['stock_level'].sum()
+    total_redistributed_item = redistributed_spare_df.groupby('item_type')['stock_level'].sum()
+
+    spare_items = total_original_item - total_redistributed_item
+
+    # Spare stock Alerts Section
+    st.subheader('Spare Stock')
+    for item_type, level in spare_items.items():
+        if level != 0:
+            if level == 1:
+                st.markdown(f' :warning: There is {int(level)} spare {item_type.replace("_", " ")}')
+            else:
+                st.markdown(f' :warning: There are {int(level)} spare {item_type.replace("_", " ")}s')
 def display_markdown_table(df, title):
     st.subheader(title)
     st.markdown(df.to_markdown(index=False), unsafe_allow_html=True)
