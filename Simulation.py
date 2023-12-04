@@ -8,14 +8,14 @@ class Simulation:
         self.df = pd.read_csv('InitialData.csv')
         self.startDate = datetime(2024, 1, 1, 8, 0) # Start date = 1st Jan 2024
         print(self.startDate)
-        self.endDate = datetime(2024, 2, 1, 22, 0) # End date = 1st Jan 2025
+        self.endDate = datetime(2024, 1, 31, 22, 0) # End date = 1st Jan 2025
         self.delta = timedelta(hours=1)  # Iterate by 1 hour
         self.closingHour = 22
         self.hoursTilOpen = 10
 
     def stockUsed(self):
         options = [0, 1, 2, 3, 4, 99] # 99 indicates restock item
-        weights = [20, 4, 2, 1, 1, 1]  # Adjust the weights based on the desired probabilities
+        weights = [40, 8, 4, 2, 2, 1]  # Adjust the weights based on the desired probabilities
         return random.choices(options, weights=weights)[0]
     
     def randomise(self):
