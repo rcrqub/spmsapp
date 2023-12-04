@@ -5,17 +5,17 @@ import pandas as pd
 
 class Simulation:
     def __init__(self):
-        self.df = pd.read_csv('BathroomData.csv')
+        self.df = pd.read_csv('InitialData.csv')
         self.startDate = datetime(2024, 1, 1, 8, 0) # Start date = 1st Jan 2024
         print(self.startDate)
-        self.endDate = datetime(2024, 1, 1, 22, 0) # End date = 1st Jan 2025
+        self.endDate = datetime(2024, 2, 1, 22, 0) # End date = 1st Jan 2025
         self.delta = timedelta(hours=1)  # Iterate by 1 hour
         self.closingHour = 22
         self.hoursTilOpen = 10
 
     def stockUsed(self):
-        options = [0, 1, 2, 3, 4] 
-        weights = [20, 4, 2, 1, 1]  # Adjust the weights based on the desired probabilities
+        options = [0, 1, 2, 3, 4, 99] # 99 indicates restock item
+        weights = [20, 4, 2, 1, 1, 1]  # Adjust the weights based on the desired probabilities
         return random.choices(options, weights=weights)[0]
     
     def randomise(self):
@@ -24,10 +24,15 @@ class Simulation:
         bathroomID = self.df['bathroom_id']
         itemType = self.df['item_type']
         for index in range(0,len(stockLevel)):
-            remainingStock = stockLevel[index] - self.stockUsed()
-            if remainingStock >= 0:
-                self.df.loc[index, 'stock_level'] = remainingStock
-            report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%m"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
+            stockUsed = self.stockUsed()
+            if stockUsed != 99:
+                remainingStock = stockLevel[index] - stockUsed
+                if remainingStock >= 0:
+                    self.df.loc[index, 'stock_level'] = remainingStock
+                report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%m"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
+            else: 
+                self.df.loc[index, 'stock_level'] = 20
+                report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%m"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
         return report
     
     def simulateDay(self):
@@ -37,3 +42,5 @@ class Simulation:
             if self.startDate.hour == self.closingHour: self.startDate += self.hoursTilOpen*self.delta # If time is 10pm move to 8am
             else: self.startDate += self.delta # Add 1 hour to the time
         return action
+    
+        

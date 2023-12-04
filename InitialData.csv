@@ -1,0 +1,11 @@
+bathroom_id,bathroom_description,item_type,stock_level
+1,First Floor F,heavy_pad,10.0
+1,First Floor F,medium_pad,23.0
+1,First Floor F,light_pad,15.0
+2,First Floor U,heavy_pad,2.0
+2,First Floor U,medium_pad,4.0
+2,First Floor U,light_pad,13.0
+3,First Floor U,heavy_pad,20.0
+3,First Floor U,medium_pad,20.0
+3,First Floor U,light_pad,20.0
+
