@@ -7,6 +7,8 @@ import pickle
 from pathlib import Path
 import streamlit_authenticator as stauth
 
+st.set_page_config(page_title="SPMS", page_icon=':toilet:')
+
 # User Auth
 names = ['Daniel Quinn', 'Adam Exley', 'Robert Craig']
 usernames = ['dquinn','aexley','rcraig']

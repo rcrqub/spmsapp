@@ -71,7 +71,7 @@ def redistribution_summary(original_df, redistributed_df):
 
     spare_items = total_original_item - total_redistributed_item
 
-    # Spare stock Alerts Section
+    # Spare stock  Alerts Section
     st.subheader('Spare Stock')
     for item_type, level in spare_items.items():
         if level != 0:

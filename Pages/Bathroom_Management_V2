@@ -3,8 +3,7 @@ import pandas as pd
 
 current_data = pd.read_csv('BathroomData.csv')
 
-st.set_page_config(page_title="SPMS", page_icon=':toilet:')
-st.title("Bathroom and Product Management")
+st.header("Bathroom and Product Management")
 
 # Function to add a new bathroom
 def add_bathroom(description):
