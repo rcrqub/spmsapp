@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Sanitary Product Management System (SPMS) is a digital solution developed as part of the CSC4008 module, focusing on Digital Transformation. This system aims to streamline and enhance the management of sanitary products focusing on Feminie Hygine Products.
+The Sanitary Product Management System (SPMS) is a digital solution developed as part of the CSC4008 module, focusing on Digital Transformation. This system aims to streamline and enhance the management of sanitary products focusing on Feminine Hygiene Products.
 ## Features
 
   
