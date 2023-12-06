@@ -102,7 +102,7 @@ elif authentication_status:
             summary.append({
                 'Bathroom ID': bathroom_id,
                 'Item Type': item_type,
-                'Original Stock': original_stock,
+                'Current Stock': original_stock,
                 'Redistributed Stock': redistributed_stock,
                 'Difference': difference_str
             })
