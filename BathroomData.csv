@@ -1,7 +1,11 @@
 year,month,day,hour,bathroom_id,item_type,stock_level,bathroom_description
-2024,1,1,22,2,heavy_pad,1, Second Floor F
-2024,1,1,22,2,medium_pad,0, Second Floor F
-2024,1,1,22,2,light_pad,6, Second Floor F
-2024,1,1,22,3,heavy_pad,0, Third Floor F
-2024,1,1,22,3,medium_pad,0, Third Floor F
-2024,1,1,22,3,light_pad,2, Third Floor F
+2024.0,1.0,1.0,22.0,1,heavy_pad,8.0, First Floor F
+2024.0,1.0,1.0,22.0,1,medium_pad,0.0, First Floor F
+2024.0,1.0,1.0,22.0,1,light_pad,1.0, First Floor F
+2024.0,1.0,1.0,22.0,2,heavy_pad,1.0, Second Floor F
+2024.0,1.0,1.0,22.0,2,medium_pad,0.0, Second Floor F
+2024.0,1.0,1.0,22.0,2,light_pad,6.0, Second Floor F
+2024.0,1.0,1.0,22.0,3,heavy_pad,0.0, Third Floor F
+2024.0,1.0,1.0,22.0,3,medium_pad,0.0, Third Floor F
+2024.0,1.0,1.0,22.0,3,light_pad,2.0, Third Floor F
+,,,,4,,,Testing
