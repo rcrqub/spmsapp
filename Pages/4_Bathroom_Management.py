@@ -56,7 +56,7 @@ elif authentication_status:
 
     current_data = pd.read_csv('BathroomData.csv')
 
-    st.header("Bathroom and Product Management")
+    st.header("Bathroom Management")
     IDS = current_data['bathroom_id'].unique()
 
     # Function to add a new bathroom
@@ -69,8 +69,6 @@ elif authentication_status:
     def remove_bathroom(bathroom_description):
         current_data.drop(current_data[current_data.bathroom_description == bathroom_description].index, inplace=True)
         current_data.to_csv('BathroomData.csv', index=False)
-
-    st.subheader('Bathroom Management')
 
     # User interface for adding a bathroom
 

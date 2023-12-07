@@ -8,4 +8,3 @@ year,month,day,hour,bathroom_id,item_type,stock_level,bathroom_description
 2024.0,1.0,1.0,22.0,3,heavy_pad,0.0, Third Floor F
 2024.0,1.0,1.0,22.0,3,medium_pad,0.0, Third Floor F
 2024.0,1.0,1.0,22.0,3,light_pad,2.0, Third Floor F
-,,,,4,,,Testing

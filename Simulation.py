@@ -7,7 +7,6 @@ class Simulation:
     def __init__(self):
         self.df = pd.read_csv('InitialData.csv')
         self.startDate = datetime(2024, 1, 1, 8, 0) # Start date = 1st Jan 2024
-        print(self.startDate)
         self.endDate = datetime(2024, 1, 31, 22, 0) # End date = 1st Jan 2025
         self.delta = timedelta(hours=1)  # Iterate by 1 hour
         self.closingHour = 22
@@ -35,7 +34,7 @@ class Simulation:
                 report.append([self.startDate.strftime("%Y"),self.startDate.strftime("%m"),self.startDate.strftime("%d"), self.startDate.strftime("%H"), bathroomID[index], itemType[index], stockLevel[index]])
         return report
     
-    def simulateDay(self):
+    def simulate(self):
         action = []
         while self.startDate <= self.endDate:
             action.append(self.randomise())
