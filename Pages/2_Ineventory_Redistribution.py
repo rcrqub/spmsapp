@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from typing import Type
 import streamlit as st 
-import altair as alt
 import pickle
 from pathlib import Path
 import streamlit_authenticator as stauth

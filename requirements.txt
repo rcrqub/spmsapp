@@ -1,7 +1,12 @@
 altair
+csv
+datetime
 numpy
 pandas
+pathlib
+pickle
 pydeck
+random
 streamlit
 streamlit_float
 streamlit_authenticator

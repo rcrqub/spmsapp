@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from streamlit_float import float_dialog
-from typing import Type
 import pickle
 from pathlib import Path
 import streamlit_authenticator as stauth
