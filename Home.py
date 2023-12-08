@@ -112,7 +112,7 @@ elif authentication_status:
 
     # Stock Low Alerts Section
     st.header('Stock Low Alerts')
-    stock_warning_thres = st.number_input("Set the Stock Warning Threshold:", step=1, placeholder="Enter a number...")
+    stock_warning_thres = st.number_input("Set the Stock Warning Threshold:", step=1, min_value=0, placeholder="Enter a number...")
 
     for _, row in current_data.iterrows():
         if row['stock_level'] <= stock_warning_thres:
