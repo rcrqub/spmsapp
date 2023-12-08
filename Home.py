@@ -1,7 +1,7 @@
 import streamlit as st 
 import pandas as pd
 import altair as alt
-
+from datetime import datetime, timedelta
 import pickle
 from pathlib import Path
 import streamlit_authenticator as stauth
@@ -57,42 +57,45 @@ elif authentication_status:
     st.header(f"Welcome, {name}, to SPMS :wave:")
     st.markdown(
         "The Sanitary Product Management System (SPMS) is designed by *Robert Craig*, *Daniel Quinn*, and *Adam Exley*. "
-        "This system aims to streamline and enhance the management of sanitary products, with a focus on Feminine Hygiene Products."
+        "This system aims to streamline and enhance the management of sanitary products, with a focus on mentstrual hygiene products."
     )
 
     # Importing All Bathroom Data
-    df = pd.read_csv('ReportingData.csv')
-    pd.to_datetime(df[['year','month','day','hour']])
-    current_date = df[['year','month','day','hour']].max()
-    current_data = df.loc[(df['year'] == current_date['year'])
-                     & (df['month'] == current_date['month'])
-                     & (df['day'] == current_date['day'])
-                     & (df['hour'] == current_date['hour'])]
+    #df = pd.read_csv('ReportingData.csv')
+    #pd.to_datetime(df[['year','month','day','hour']])
+    #current_date = df[['year','month','day','hour']].max()
+    #current_data = df.loc[(df['year'] == current_date['year'])
+    #                 & (df['month'] == current_date['month'])
+    #                 & (df['day'] == current_date['day'])
+    #                 & (df['hour'] == current_date['hour'])]
 
+##########################################################################################
 
     # Product Usage Section
     st.subheader('Product Usage')
 
+    # Read the CSV data
+    df = pd.read_csv('ReportingDataMonth.csv')
+
+    # Convert "year," "month," and "day" to datetime
+    df['date'] = pd.to_datetime(df[['year', 'month', 'day']])
+
+    # Extract the date of the last full day
+    last_full_day = df['date'].iloc[-1].date()
+
+    # Filter the DataFrame for the last full day
+    df_filtered = df[df['date'].dt.date == last_full_day]
+
+    # Drop the additional 'date' column if needed
+    dfDay = df_filtered.drop('date', axis=1)
+
     # Convert columns to appropriate types
-    df['datetime'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']].astype(str).agg('-'.join, axis=1), format='%Y-%m-%d-%H')
-    df['stock_level'] = df['stock_level'].astype(int)
+    dfDay['datetime'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']].astype(str).agg('-'.join, axis=1), format='%Y-%m-%d-%H')
+    dfDay['stock_level'] = dfDay['stock_level'].astype(int)
 
-    # Create a new column combining bathroom_id and item_type
-    df['group'] = df['bathroom_id'].astype(str) + ' ' + df['item_type']
 
-    total_quantity_by_bathroom = df.groupby(['datetime', 'bathroom_id']).agg({'stock_level': 'sum'}).reset_index()
-    chart1 = alt.Chart(total_quantity_by_bathroom).mark_line().encode(
-        x='datetime:T',
-        y='stock_level:Q',
-        color=alt.Color('bathroom_id:N', legend=alt.Legend(title='Bathroom ID')),
-        tooltip=['datetime:T', 'stock_level:Q', 'bathroom_id:N']
-    ).properties(
-        width=800,
-        height=400,
-        title='Bathroom ID'
-    )
 
-    chart2 = alt.Chart(df.groupby(['datetime', 'item_type']).agg({'stock_level': 'sum'}).reset_index()).mark_line().encode(
+    chart1 = alt.Chart(dfDay.groupby(['datetime', 'item_type']).agg({'stock_level': 'sum'}).reset_index()).mark_line().encode(
         x='datetime:T',
         y='stock_level:Q',
         color=alt.Color('item_type:N', legend=alt.Legend(title='Item Type')),
@@ -100,7 +103,19 @@ elif authentication_status:
     ).properties(
         width=800,
         height=400,
-        title='Item Type'
+        title='Stock Level per Item Type'
+    )
+
+    total_quantity_by_bathroom = dfDay.groupby(['datetime', 'bathroom_id']).agg({'stock_level': 'sum'}).reset_index()
+    chart2 = alt.Chart(total_quantity_by_bathroom).mark_line().encode(
+        x='datetime:T',
+        y='stock_level:Q',
+        color=alt.Color('bathroom_id:N', legend=alt.Legend(title='Bathroom ID')),
+        tooltip=['datetime:T', 'stock_level:Q', 'bathroom_id:N']
+    ).properties(
+        width=800,
+        height=400,
+        title='Stock Level per Bathroom ID'
     )
 
     col1, col2 = st.columns(2)
@@ -110,11 +125,21 @@ elif authentication_status:
     with col2:
         st.altair_chart(chart2, use_container_width=True)
 
+
+##########################################################################################
+
     # Stock Low Alerts Section
     st.header('Stock Low Alerts')
     stock_warning_thres = st.number_input("Set the Stock Warning Threshold:", step=1, min_value=0, placeholder="Enter a number...")
 
-    for _, row in current_data.iterrows():
+    # Calculate the timestamp for one hour ago
+    one_hour_ago = datetime.now() - timedelta(hours=1)
+
+    # Filter the DataFrame to include only the last hour's worth of stock for each item type and bathroom ID
+    last_hour_stock_df = dfDay[dfDay['datetime'] >= one_hour_ago].groupby(['item_type', 'bathroom_id']).apply(lambda x: x.loc[x['datetime'].idxmax()]).reset_index(drop=True)
+
+
+    for _, row in last_hour_stock_df.iterrows():
         if row['stock_level'] <= stock_warning_thres:
             item_type = row['item_type'].replace("_", " ").capitalize()
             bathroom_id = row['bathroom_id']
